@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | EventPro</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    padding:30px;
+}
+
+.container{
+    width:100%;
+    max-width:900px;
+}
+
+.contact-box{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.left,
+.right{
+    padding:40px;
+}
+
+.left{
+    background:rgba(255,255,255,.08);
+}
+
+.left h1{
+    color:white;
+    margin-bottom:10px;
+}
+
+.left p{
+    color:#f2f2f2;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.about-section{
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:14px;
+    padding:18px;
+    margin-bottom:24px;
+}
+
+.about-section h3{
+    color:white;
+    margin-bottom:10px;
+    font-size:18px;
+}
+
+.about-section p{
+    margin-bottom:10px;
+    font-size:14px;
+}
+
+.about-section ul{
+    padding-left:18px;
+    color:#f2f2f2;
+    line-height:1.7;
+}
+
+.image-strip{
+    margin: 16px 0 22px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.image-strip img{
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display:block;
+}
+
+.right h2{
+    color:white;
+    margin-bottom:25px;
+}
+
+label{
+    display:block;
+    color:white;
+    margin-bottom:8px;
+    font-weight:500;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    margin-bottom:18px;
+    outline:none;
+    font-size:15px;
+}
+
+textarea{
+    resize:none;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    background:#6C63FF;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#5147ff;
+    transform:translateY(-2px);
+}
+
+.home-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 30px;
+    border-radius:50px;
+    background:#28a745;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.home-btn:hover{
+    background:#218838;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+        align-items: stretch;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .contact-box {
+        grid-template-columns: 1fr;
+    }
+
+    .left,
+    .right {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .left,
+    .right {
+        padding: 20px;
+    }
+
+    .left h1 {
+        font-size: 24px;
+    }
+
+    button,
+    .home-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="contact-box">
+
+<div class="left">
+
+<h1>Contact EventPro</h1>
+
+<p>
+Have questions about an event or need help with your booking?
+Our team is always ready to assist you.
+Feel free to contact us anytime.
+</p>
+
+<div class="about-section">
+    <h3>About EventPro</h3>
+    <p>EventPro helps you discover, book, and manage exciting events with ease.</p>
+    <ul>
+        <li>Simple event booking experience</li>
+        <li>Reliable support for every guest</li>
+        <li>Professional event management tools</li>
+    </ul>
+</div>
+
+<div class="image-strip">
+    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80" alt="Event venue">
+</div>
+
+<div class="info">Email: eventmanagement@gmail.com</div>
+
+<div class="info">Phone: +91 9876543210</div>
+
+<div class="info">Location: Lucknow, Uttar Pradesh, India</div>
+
+<div class="info">Hours: Mon – Sat : 9:00 AM – 7:00 PM</div>
+
+<a href="/" class="home-btn">
+Back to Home
+</a>
+
+</div>
+
+<div class="right">
+
+<h2>Send us a Message</h2>
+
+<form action="/contact" method="POST">
+
+<label>Full Name</label>
+<input type="text" name="name" placeholder="Enter your name" required>
+
+<label>Email Address</label>
+<input type="email" name="email" placeholder="Enter your email" required>
+
+<label>Phone Number</label>
+<input type="tel" name="phone" placeholder="Enter your phone number" required>
+
+<label>Message</label>
+<textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+<button type="submit">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

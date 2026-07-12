@@ -1,0 +1,12 @@
+<svg width="220" height="60" viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="EventPro logo">
+  <rect x="6" y="8" width="44" height="44" rx="12" fill="#8b5e3c"/>
+  <path d="M24 16c8 0 14 6 14 14s-6 14-14 14-14-6-14-14 6-14 14-14z" fill="#f7e8d8"/>
+  <path d="M24 20c4.4 0 8 3.6 8 8s-3.6 8-8 8-8-3.6-8-8 3.6-8 8-8z" fill="#8b5e3c"/>
+  <path d="M15 31h18" stroke="#f7e8d8" stroke-width="2" stroke-linecap="round"/>
+  <path d="M24 15v-4" stroke="#f7e8d8" stroke-width="2" stroke-linecap="round"/>
+  <path d="M24 41v4" stroke="#f7e8d8" stroke-width="2" stroke-linecap="round"/>
+  <path d="M13 24h-4" stroke="#f7e8d8" stroke-width="2" stroke-linecap="round"/>
+  <path d="M41 24h4" stroke="#f7e8d8" stroke-width="2" stroke-linecap="round"/>
+  <text x="62" y="34" font-family="Poppins, Arial, sans-serif" font-size="26" font-weight="700" fill="#8b5e3c">Event</text>
+  <text x="132" y="34" font-family="Poppins, Arial, sans-serif" font-size="26" font-weight="700" fill="#5b3b2b">Pro</text>
+</svg>

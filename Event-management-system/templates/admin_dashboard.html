@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventPro | Admin Dashboard</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background: #f7f3ec; color: #2f241d; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 30px 20px 50px; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; gap: 16px; }
+        .header h1 { margin: 0; }
+        .subtitle { margin: 6px 0 0; color: #715845; }
+        .logout { text-decoration: none; background: #8b5e3c; color: white; padding: 10px 14px; border-radius: 8px; }
+        .tabs { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+        .tab-btn { border: none; background: #efe2d3; color: #6a4930; padding: 10px 16px; border-radius: 999px; cursor: pointer; font-weight: 600; }
+        .tab-btn.active { background: #8b5e3c; color: white; }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+        .card { background: white; border-radius: 16px; padding: 20px; box-shadow: 0 10px 28px rgba(0,0,0,0.08); }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { text-align: left; padding: 12px; border-bottom: 1px solid #e5ddd4; }
+        th { background: #f3e7db; }
+        .about-card h2 { margin-top: 0; }
+        .about-card ul { padding-left: 20px; line-height: 1.7; }
+        @media (max-width: 768px) {
+            .container { padding: 20px 12px 40px; }
+            .header { flex-direction: column; align-items: flex-start; }
+            .tabs { gap: 8px; }
+            .tab-btn { padding: 8px 12px; font-size: 14px; }
+            table { display: block; overflow-x: auto; white-space: nowrap; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>Admin Dashboard</h1>
+                <p class="subtitle">Manage the platform and review the main information about EventPro.</p>
+            </div>
+            <a class="logout" href="/admin/logout">Logout</a>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Admin sections">
+            <button class="tab-btn active" data-target="overview" role="tab" aria-selected="true">Overview</button>
+            <button class="tab-btn" data-target="bookings" role="tab" aria-selected="false">Bookings</button>
+            <button class="tab-btn" data-target="about" role="tab" aria-selected="false">About</button>
+        </div>
+
+        <div id="overview" class="tab-panel active">
+            <div class="card">
+                <p><strong>Welcome, {{ username }}</strong></p>
+                <p>This panel is for administrators only. You can view the registered users from the database.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                        <tr>
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.fullname }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.phone }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="4">No users found.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="bookings" class="tab-panel">
+            <div class="card">
+                <h2>All Bookings</h2>
+                <p>These are all the confirmed bookings made through the website.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Event</th>
+                            <th>Tickets</th>
+                            <th>Booked At</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for booking in bookings %}
+                        <tr>
+                            <td>{{ booking.id }}</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.event }}</td>
+                            <td>{{ booking.tickets }}</td>
+                            <td>{{ booking.created_at }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="7">No bookings found yet.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="about" class="tab-panel">
+            <div class="card about-card">
+                <h2>About EventPro</h2>
+                <p>EventPro is an event management platform built to make planning, booking, and customer engagement simpler for organizers.</p>
+                <ul>
+                    <li>Manage event bookings and guest information efficiently.</li>
+                    <li>Keep the website content organized from a central admin view.</li>
+                    <li>Support smooth communication between organizers and attendees.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+
+        tabButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                tabButtons.forEach((btn) => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-selected', 'false');
+                });
+
+                tabPanels.forEach((panel) => panel.classList.remove('active'));
+
+                button.classList.add('active');
+                button.setAttribute('aria-selected', 'true');
+                document.getElementById(button.dataset.target).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

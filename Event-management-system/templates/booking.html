@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Book Your Event</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+}
+
+.container{
+    width:95%;
+    max-width:700px;
+}
+
+.form-box{
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+    padding:40px;
+    border-radius:20px;
+    color:white;
+    box-shadow:0 10px 35px rgba(0,0,0,.3);
+}
+
+.form-box h1{
+    text-align:center;
+    margin-bottom:10px;
+    font-size:34px;
+}
+
+.form-box p{
+    text-align:center;
+    margin-bottom:30px;
+    color:#f1f1f1;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:500;
+}
+
+.image-banner{
+    margin-bottom:18px;
+    border-radius:16px;
+    overflow:hidden;
+}
+
+.image-banner img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    display:block;
+}
+
+input,
+select{
+    width:100%;
+    padding:14px;
+    margin-bottom:20px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
+}
+
+input:focus,
+select:focus{
+    border:2px solid #8b5e3c;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    background:#8b5e3c;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#6f472f;
+    transform:translateY(-2px);
+}
+
+.back{
+    margin-top:20px;
+    text-align:center;
+}
+
+.back a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.back a:hover{
+    color:#ddd;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+        align-items: stretch;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .form-box {
+        padding: 24px;
+    }
+
+    .form-box h1 {
+        font-size: 28px;
+    }
+
+    input,
+    select,
+    button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-box {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .form-box h1 {
+        font-size: 24px;
+    }
+
+    button {
+        padding: 14px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="form-box">
+
+<div class="image-banner">
+    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=900&q=80" alt="Event celebration">
+</div>
+<h1>Book Your Event</h1>
+
+<p>Reserve your seat for an unforgettable experience.</p>
+
+<form action="/confirmation" method="POST">
+
+<label>👤 Full Name</label>
+<input type="text" name="name" placeholder="Enter your full name" required>
+
+<label>📧 Email Address</label>
+<input type="email" name="email" placeholder="Enter your email" required>
+
+<label>📱 Phone Number</label>
+<input type="tel" name="phone" placeholder="Enter your phone number" required>
+
+<label>Select Event</label>
+
+<select name="event" required>
+<option value="">Choose an Event</option>
+<option value="Music Concert">Music Concert</option>
+<option value="Tech Fest">Tech Fest</option>
+<option value="Food Festival">Food Festival</option>
+<option value="Fashion Show">Fashion Show</option>
+</select>
+
+<label>Number of Tickets</label>
+<input type="number" name="tickets" min="1" placeholder="Enter number of tickets" required>
+
+<label>Card Number</label>
+<input type="text" name="card_number" placeholder="4242 4242 4242 4242" required>
+
+<label>Expiry</label>
+<input type="text" name="expiry" placeholder="MM/YY" required>
+
+<label>CVV</label>
+<input type="text" name="cvv" placeholder="123" required>
+
+<button type="submit">
+Pay & Confirm Booking
+</button>
+
+</form>
+
+<div class="back">
+<a href="/events">Back to Events</a>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

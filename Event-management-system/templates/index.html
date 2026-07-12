@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Event Management</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f7f3ec;
+    color:#2f241d;
+    line-height:1.6;
+}
+
+/* Navbar */
+
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(12px);
+    box-shadow:0 2px 18px rgba(0,0,0,.08);
+    z-index:1000;
+}
+
+nav{
+    width:92%;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 0;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#8b5e3c;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#8b5e3c;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    background:linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.58)),
+    url("https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:58px;
+    margin-bottom:20px;
+    letter-spacing:-0.02em;
+}
+
+.hero-content p{
+    font-size:20px;
+    max-width:700px;
+    margin:auto;
+    margin-bottom:35px;
+    line-height:1.7;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 38px;
+    background:#8b5e3c;
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-size:18px;
+    transition:.3s;
+    margin:10px;
+}
+
+.btn:hover{
+    background:#6f472f;
+    transform:translateY(-3px);
+}
+
+.btn2{
+    background:white;
+    color:#8b5e3c;
+}
+
+.btn2:hover{
+    background:#f3e7db;
+}
+
+/* Hero highlight */
+
+.highlight{
+    padding: 0 8% 80px;
+    margin-top: -40px;
+}
+
+.highlight-card{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 28px;
+    background: white;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(0,0,0,.1);
+}
+
+.highlight-content{
+    padding: 36px;
+}
+
+.eyebrow{
+    display:inline-block;
+    margin-bottom: 12px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #f5e8d8;
+    color: #8b5e3c;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.highlight-content h3{
+    font-size: 30px;
+    margin-bottom: 12px;
+    color: #2f241d;
+}
+
+.highlight-content p{
+    color: #5f5348;
+    margin-bottom: 18px;
+}
+
+.highlight-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Services */
+
+.services{
+    padding:90px 8% 70px;
+}
+
+.services h2{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:22px;
+    text-align:center;
+    box-shadow:0 14px 40px rgba(0,0,0,.07);
+    transition:.35s;
+    border:1px solid #f0e5d8;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 45px rgba(0,0,0,.1);
+}
+
+.card h3{
+    margin:20px 0;
+    color:#8b5e3c;
+}
+
+.service-image{
+    width:100%;
+    height:170px;
+    border-radius:16px;
+    overflow:hidden;
+    margin-bottom:16px;
+}
+
+.service-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* Footer */
+
+footer{
+    background:#1e1814;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+footer p{
+    opacity:.8;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        padding: 120px 18px 70px;
+    }
+
+    .highlight {
+        padding: 0 5% 70px;
+    }
+
+    .highlight-card {
+        grid-template-columns: 1fr;
+    }
+
+    .highlight-content {
+        padding: 28px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 17px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav ul {
+        margin-top: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .services {
+        padding: 70px 5%;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 24px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .services h2 {
+        font-size: 30px;
+    }
+
+    .card {
+        padding: 24px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+    <img src="/static/eventpro-logo.svg" alt="EventPro logo" style="height:46px; width:auto; display:block;">
+</div>
+
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/events">Events</a></li>
+<li><a href="/booking">Book Event</a></li>
+<li><a href="/contact">Contact</a></li>
+<li><a href="/admin/login">Admin</a></li>
+<li><a href="/logout">Logout</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Make Every Event Unforgettable</h1>
+
+<p>
+From weddings and birthday celebrations to corporate events and music festivals,
+we help you create memorable experiences with professional planning and seamless execution.
+</p>
+
+<a href="/events" class="btn">Explore Events</a>
+
+<a href="/booking" class="btn btn2">Book Now</a>
+
+</div>
+
+</section>
+
+<section class="highlight">
+    <div class="highlight-card">
+        <div class="highlight-content">
+            <span class="eyebrow">Featured experience</span>
+            <h3>{{ featured_event.title }}</h3>
+            <p>Step into a beautifully curated event on {{ featured_event.date_label }} at {{ featured_event.location }}. It is crafted to feel warm, polished, and unforgettable for every guest.</p>
+            <a href="/booking" class="btn">Reserve Your Spot</a>
+        </div>
+        <div class="highlight-image">
+            <img src="{{ featured_event.image }}" alt="{{ featured_event.title }}">
+        </div>
+    </div>
+</section>
+
+<section class="services">
+
+<h2>Our Premium Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="service-image"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80" alt="Wedding event"></div>
+<h3>Wedding Events</h3>
+<p>Luxury wedding planning with elegant decorations and unforgettable experiences.</p>
+</div>
+
+<div class="card">
+<div class="service-image"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80" alt="Birthday celebration"></div>
+<h3>Birthday Parties</h3>
+<p>Celebrate birthdays with creative themes, entertainment, and delicious catering.</p>
+</div>
+
+<div class="card">
+<div class="service-image"><img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Corporate event"></div>
+<h3>Corporate Events</h3>
+<p>Professional seminars, conferences, and corporate gatherings managed perfectly.</p>
+</div>
+
+<div class="card">
+<div class="service-image"><img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&q=80" alt="Music concert"></div>
+<h3>Music Concerts</h3>
+<p>Enjoy amazing live performances with world-class event management.</p>
+</div>
+
+<div class="card">
+<div class="service-image"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80" alt="College festival"></div>
+<h3>College Festivals</h3>
+<p>Exciting cultural festivals, technical fests, sports events, and celebrations.</p>
+</div>
+
+<div class="card">
+<div class="service-image"><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="Custom celebration"></div>
+<h3>Custom Events</h3>
+<p>We organize every special occasion according to your vision and budget.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 EventPro | Crafted for unforgettable celebrations.</p>
+
+</footer>
+
+</body>
+</html>

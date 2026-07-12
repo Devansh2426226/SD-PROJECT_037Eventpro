@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Booking Image</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Booking Completed Successfully!</h1>
+
+    <div class="card">
+        <h2>Event Booking Confirmation</h2>
+
+        <p><b>Name:</b> {{ name }}</p>
+        <p><b>Event:</b> {{ event }}</p>
+        <p><b>Tickets:</b> {{ tickets }}</p>
+
+        <h3>Thank You for Booking!</h3>
+    </div>
+
+    <br>
+
+    <button onclick="window.print()">Generate / Download Image</button>
+
+    <br><br>
+
+    <a href="/">Back to Home</a>
+
+</body>
+</html>
